@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HidayatWay | حضرت محمد ﷺ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Almarai&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#f4f8f5;
+    --card:#ffffff;
+    --text:#333;
+    --green:#27ae60;
+    --darkgreen:#145c3a;
+}
+body.dark{
+    --bg:#0f1f1a;
+    --card:#1e2f29;
+    --text:#e8f6ef;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{
+    font-family:'Noto Sans Arabic',sans-serif;
+    direction:rtl;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+}
+body{display:flex;flex-direction:column}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#1f7a4d,#27ae60);
+    color:#fff;
+    padding:14px 18px;
+    position:relative;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.15)
+}
+.logo{
+    font-size:30px;
+    font-family:'Almarai';
+}
+.tagline{font-size:14px}
+
+/* DARK TOGGLE - LEFT */
+.toggle{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(255,255,255,.2);
+    border-radius:20px;
+    padding:6px 12px;
+    cursor:pointer;
+    font-size:14px;
+    user-select:none;
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:18px 0 80px;
+}
+h2{text-align:center;color:var(--green);margin:12px 0 15px}
+
+/* LIST */
+ul#sirah{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    counter-reset:num
+}
+ul#sirah li{
+    background:var(--card);
+    padding:14px 18px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+    cursor:pointer;
+    font-size:15px;
+    opacity:0;
+    transform:translateY(20px);
+    animation:fade .6s forwards
+}
+ul#sirah li::before{
+    counter-increment:num;
+    content:counter(num) ". ";
+    color:var(--green);
+    font-weight:bold
+}
+ul#sirah li:hover{
+    transform:translateY(-4px) scale(1.04);
+}
+@keyframes fade{to{opacity:1;transform:translateY(0)}}
+
+/* POPUP */
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:var(--card);
+    padding:22px;
+    border-radius:12px;
+    max-width:450px;
+    width:92%;
+    z-index:1000;
+    box-shadow:0 6px 25px rgba(0,0,0,.3);
+    transition:.3s;
+}
+.popup.active{transform:translate(-50%,-50%) scale(1)}
+.popup h3{color:var(--green);margin-bottom:10px}
+.popup p{line-height:1.8}
+
+/* BUTTONS */
+.popup-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px
+}
+.popup button{
+    flex:1;
+    padding:9px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+}
+.copy-btn{background:var(--darkgreen);color:#fff}
+.close-btn{background:var(--green);color:#fff}
+
+/* OVERLAY */
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.4);
+    display:none;
+    z-index:900
+}
+.overlay.active{display:block}
+
+/* COPY MESSAGE */
+.copy-msg{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--green);
+    color:#fff;
+    padding:10px 22px;
+    border-radius:8px;
+    opacity:0;
+    transition:.4s;
+    z-index:1200
+}
+.copy-msg.show{opacity:1}
+
+/* FOOTER */
+footer{
+    background:var(--darkgreen);
+    color:#fff;
+    text-align:center;
+    padding:14px;
+    margin-top:auto
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="toggle" id="modeToggle">🌙 Dark</div>
+
+    <div class="logo">🕌 HidayatWay</div>
+    <div class="tagline">حضرت محمد ﷺ — سیرتِ مبارکہ</div>
+</header>
+
+<div class="container">
+<h2>حضور اکرم ﷺ کی زندگی کے اہم واقعات</h2>
+
+<ul id="sirah">
+<li data="حضرت محمد ﷺ کی ولادت 570 عیسوی میں مکہ مکرمہ میں ہوئی۔ آپ ﷺ بچپن ہی سے سچائی اور امانت میں مشہور تھے۔ اللہ نے آپ ﷺ کو ہر برائی سے محفوظ رکھا۔">
+ولادت رسول ﷺ
+</li>
+
+<li data="کم عمری میں والدین کا سایہ اٹھ گیا مگر اللہ تعالیٰ نے خاص حفاظت فرمائی۔ یتیمی کے باوجود اعلیٰ اخلاق اپنائے۔">
+یتیمی کا دور
+</li>
+
+<li data="غارِ حرا میں پہلی وحی نازل ہوئی جس سے نبوت کا آغاز ہوا۔ یہ انسانیت کے لیے ہدایت کا پیغام تھا۔">
+پہلی وحی
+</li>
+
+<li data="مدینہ ہجرت کے بعد اسلامی ریاست قائم ہوئی جو عدل، مساوات اور اخوت پر مبنی تھی۔">
+ریاستِ مدینہ
+</li>
+
+<li data="فتح مکہ کے موقع پر دشمنوں کو عام معافی دی گئی۔ یہ رحمت و درگزر کی عظیم مثال ہے۔">
+فتح مکہ
+</li>
+
+<li data="حضرت محمد ﷺ نوجوانی میں بھی سچائی اور دیانت کے لیے مشہور تھے۔ مکہ کے لوگ آپ ﷺ کو الصادق اور الامین کہا کرتے تھے۔ لوگ اپنے قیمتی سامان آپ ﷺ کے پاس امانت کے طور پر رکھتے تھے۔ یہ کردار نبوت سے پہلے بھی سب کے لیے مثال تھا۔">
+الصادق اور الامین
+</li>
+
+<li data="حضرت خدیجہؓ کے ساتھ نکاح آپ ﷺ کی زندگی کا اہم موڑ تھا۔ حضرت خدیجہؓ نے ہر مشکل وقت میں آپ ﷺ کا بھرپور ساتھ دیا۔ بعثت کے بعد سب سے پہلے ایمان لانے والی بھی وہی تھیں۔ ان کا کردار اسلامی تاریخ میں عظیم ہے۔">
+حضرت خدیجہؓ سے نکاح
+</li>
+
+<li data="اعلانِ نبوت کے بعد آپ ﷺ نے سب سے پہلے اپنے قریبی رشتہ داروں کو اسلام کی دعوت دی۔ ابتدا میں مخالفت کا سامنا کرنا پڑا مگر آپ ﷺ نے حکمت اور نرمی سے دعوت کا سلسلہ جاری رکھا۔ یہ دعوت خلوص اور صبر کی مثال ہے۔">
+دعوتِ اسلام کا آغاز
+</li>
+
+<li data="کفارِ مکہ کی طرف سے شدید مخالفت کے باوجود حضرت محمد ﷺ نے کبھی بددعا نہیں دی۔ آپ ﷺ نے ہمیشہ ہدایت کی دعا فرمائی۔ دشمنوں کے لیے بھی رحم اور شفقت کا مظاہرہ کیا۔ یہی آپ ﷺ کی عظیم اخلاقی مثال ہے۔">
+رحمت للعالمین
+</li>
+
+<li data="شعبِ ابی طالب کا محاصرہ مسلمانوں کے لیے نہایت سخت آزمائش تھا۔ تین سال تک فاقہ کشی اور مشکلات برداشت کی گئیں۔ اس کے باوجود ایمان میں کمی نہ آئی۔ یہ دور صبر اور ثابت قدمی کی روشن مثال ہے۔">
+شعبِ ابی طالب
+</li>
+
+<li data="طائف کے سفر میں آپ ﷺ کو شدید تکلیف دی گئی۔ پتھر مارے گئے اور لہولہان کیا گیا۔ اس کے باوجود آپ ﷺ نے بددعا کے بجائے ہدایت کی دعا فرمائی۔ یہ اعلیٰ ظرفی اور صبر کی بے مثال مثال ہے۔">
+واقعۂ طائف
+</li>
+
+<li data="معراج کی رات حضرت محمد ﷺ کو بیت المقدس اور آسمانوں کی سیر کرائی گئی۔ اس سفر میں نماز کا تحفہ ملا جو مومن کی معراج ہے۔ یہ واقعہ ایمان والوں کے لیے عظیم نشانی ہے۔">
+واقعۂ معراج
+</li>
+
+<li data="حضرت محمد ﷺ نے ہمیشہ غلاموں، غریبوں اور کمزوروں کے حقوق کی حفاظت فرمائی۔ مساوات اور عدل کا ایسا نظام دیا جس کی مثال تاریخ میں نہیں ملتی۔ اسلام نے انسانیت کو عزت کا مقام دیا۔">
+حقوقِ انسانیت
+</li>
+
+
+<li data="سادگی، عاجزی اور خدمتِ خلق آپ ﷺ کی زندگی کا حصہ تھیں۔">
+سادہ زندگی
+</li>
+
+<li data="حجۃ الوداع میں آپ ﷺ نے مکمل ضابطۂ حیات پیش فرمایا جو قیامت تک کے لیے رہنمائی ہے۔">
+خطبۂ حجۃ الوداع
+</li>
+</ul>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+<h3>سیرتِ رسول ﷺ</h3>
+<p id="popupText"></p>
+<div class="popup-buttons">
+<button class="copy-btn" id="copyBtn">📋 Copy</button>
+<button class="close-btn" id="closeBtn">✖ بند کریں</button>
+</div>
+</div>
+
+<div class="copy-msg" id="copyMsg">Copied Successfully ✅</div>
+
+<footer>&copy; 2025 HidayatWay</footer>
+
+<script>
+const body=document.body;
+const toggle=document.getElementById("modeToggle");
+
+if(localStorage.getItem("mode")==="dark"){
+    body.classList.add("dark");
+    toggle.textContent="☀ Light";
+}
+toggle.onclick=()=>{
+    body.classList.toggle("dark");
+    if(body.classList.contains("dark")){
+        toggle.textContent="☀ Light";
+        localStorage.setItem("mode","dark");
+    }else{
+        toggle.textContent="🌙 Dark";
+        localStorage.setItem("mode","light");
+    }
+};
+
+const items=document.querySelectorAll("#sirah li");
+const popup=document.getElementById("popup");
+const overlay=document.getElementById("overlay");
+const text=document.getElementById("popupText");
+const closeBtn=document.getElementById("closeBtn");
+const copyBtn=document.getElementById("copyBtn");
+const msg=document.getElementById("copyMsg");
+
+items.forEach(li=>{
+    li.onclick=()=>{
+        text.textContent=li.getAttribute("data");
+        popup.classList.add("active");
+        overlay.classList.add("active");
+    }
+});
+closeBtn.onclick=overlay.onclick=()=>{
+    popup.classList.remove("active");
+    overlay.classList.remove("active");
+};
+copyBtn.onclick=()=>{
+    navigator.clipboard.writeText(text.textContent);
+    msg.classList.add("show");
+    setTimeout(()=>msg.classList.remove("show"),1500);
+};
+</script>
+
+</body>
+</html>

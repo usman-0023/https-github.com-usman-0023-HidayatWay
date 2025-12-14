@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HidayatWay | قرآن پڑھنے کے فوائد</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Almarai&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#f4f8f5;
+    --card:#ffffff;
+    --text:#333;
+    --green:#27ae60;
+    --darkgreen:#145c3a;
+}
+body.dark{
+    --bg:#0f1f1a;
+    --card:#1e2f29;
+    --text:#e8f6ef;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{
+    font-family:'Noto Sans Arabic',sans-serif;
+    direction:rtl;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+}
+body{display:flex;flex-direction:column}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#1f7a4d,#27ae60);
+    color:#fff;
+    padding:16px;
+    text-align:center;
+    position:relative;
+    box-shadow:0 4px 12px rgba(0,0,0,.15)
+}
+.logo{font-size:30px;font-family:'Almarai'}
+.tagline{font-size:14px}
+
+/* DARK TOGGLE */
+.toggle{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(255,255,255,.2);
+    padding:6px 12px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:22px 0 80px;
+    flex-grow:1
+}
+h2{text-align:center;color:var(--green);margin-bottom:15px}
+
+/* LIST */
+ul#benefits{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    counter-reset:num
+}
+ul#benefits li{
+    background:var(--card);
+    padding:12px 16px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+    cursor:pointer;
+    font-size:15px;
+    opacity:0;
+    transform:translateY(20px);
+    animation:fade .6s forwards
+}
+ul#benefits li::before{
+    counter-increment:num;
+    content:counter(num) ". ";
+    color:var(--green);
+    font-weight:bold
+}
+ul#benefits li:hover{transform:translateY(-4px) scale(1.04)}
+@keyframes fade{to{opacity:1;transform:translateY(0)}}
+
+/* POPUP */
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:var(--card);
+    padding:22px;
+    border-radius:12px;
+    max-width:450px;
+    width:92%;
+    z-index:1000;
+    transition:.3s;
+    box-shadow:0 6px 25px rgba(0,0,0,.3)
+}
+.popup.active{transform:translate(-50%,-50%) scale(1)}
+.popup h3{color:var(--green);margin-bottom:10px}
+.popup p{line-height:1.8}
+
+/* POPUP BUTTONS */
+.popup-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px
+}
+.popup button{
+    flex:1;
+    padding:9px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px
+}
+.copy-btn{background:var(--darkgreen);color:#fff}
+.close-btn{background:var(--green);color:#fff}
+
+/* OVERLAY */
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.4);
+    display:none;
+    z-index:900
+}
+.overlay.active{display:block}
+
+/* COPY MESSAGE */
+.copy-msg{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--green);
+    color:#fff;
+    padding:10px 22px;
+    border-radius:8px;
+    opacity:0;
+    transition:.4s;
+    z-index:1200
+}
+.copy-msg.show{opacity:1}
+
+/* FOOTER */
+footer{
+    background:var(--darkgreen);
+    color:#fff;
+    text-align:center;
+    padding:14px;
+    margin-top:auto
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="toggle" id="modeToggle">🌙 Dark</div>
+    <div class="logo">🕌 HidayatWay</div>
+    <div class="tagline">قرآن پڑھنے کے فوائد</div>
+</header>
+
+<div class="container">
+<h2>قرآن پاک پڑھنے کے روحانی فوائد</h2>
+
+<ul id="benefits">
+<li data="قرآن پڑھنے سے دل کو سکون اور روح کو راحت حاصل ہوتی ہے۔ اللہ کی یاد انسان کے دل کو مضبوط بناتی ہے۔">
+روحانی سکون
+</li>
+<li data="قرآن انسان کو اللہ کے قریب کرتا ہے اور ایمان میں اضافہ کرتا ہے۔">
+اللہ کی قربت
+</li>
+<li data="قرآن پاک پڑھنے سے دل میں اللہ کا خوف اور تقویٰ پیدا ہوتا ہے۔ انسان برائیوں سے بچنے لگتا ہے۔ اعمال میں بہتری آتی ہے اور نیت صاف ہو جاتی ہے۔">
+تقویٰ کی دولت
+</li>
+
+<li data="قرآن انسان کے اخلاق کو سنوارتا ہے۔ نرم مزاجی، صبر اور برداشت پیدا ہوتی ہے۔ انسان دوسروں کے ساتھ حسنِ سلوک اختیار کرتا ہے۔">
+اچھے اخلاق
+</li>
+
+<li data="قرآن پڑھنے سے دل کا اندھیرا ختم ہوتا ہے۔ گمراہی سے نکل کر ہدایت کا راستہ ملتا ہے۔ زندگی کا مقصد واضح ہو جاتا ہے۔">
+ہدایت کا نور
+</li>
+
+<li data="قرآن انسان کو مشکلات میں حوصلہ دیتا ہے۔ مایوسی ختم ہوتی ہے اور امید پیدا ہوتی ہے۔ دل مضبوط ہو جاتا ہے۔">
+حوصلہ اور امید
+</li>
+
+<li data="قرآن پڑھنے سے رزق میں برکت آتی ہے۔ اللہ تعالیٰ آسان راستے پیدا فرماتے ہیں۔ زندگی میں سکون نصیب ہوتا ہے۔">
+رزق میں برکت
+</li>
+
+<li data="قرآن انسان کو برے خیالات سے بچاتا ہے۔ دل پاک رہتا ہے اور شیطانی وسوسے کم ہو جاتے ہیں۔">
+شیطان سے حفاظت
+</li>
+
+<li data="قرآن گھروں میں پڑھا جائے تو برکت نازل ہوتی ہے۔ فرشتے داخل ہوتے ہیں اور شیطان بھاگ جاتا ہے۔">
+گھر میں برکت
+</li>
+
+<li data="قرآن پڑھنے والا اللہ کے خاص بندوں میں شامل ہو جاتا ہے۔ اس کا مقام بلند ہوتا ہے۔">
+اللہ کا خاص بندہ
+</li>
+
+<li data="قرآن انسان کو نرمی اور عاجزی سکھاتا ہے۔ تکبر ختم ہوتا ہے اور انکساری آتی ہے۔">
+عاجزی
+</li>
+
+<li data="قرآن پڑھنے سے دل مطمئن رہتا ہے۔ بے چینی اور اضطراب کم ہو جاتا ہے۔">
+اطمینانِ قلب
+</li>
+
+<li data="قرآن انسان کو صحیح فیصلے کرنے میں مدد دیتا ہے۔ عقل اور فہم میں اضافہ ہوتا ہے۔">
+صحیح فیصلے
+</li>
+
+<li data="قرآن آخرت میں روشنی اور نجات کا ذریعہ بنے گا۔ قبر میں ساتھی بنے گا۔">
+آخرت کی نجات
+</li>
+
+<li data="قرآن پڑھنے سے وقت کی قدر پیدا ہوتی ہے۔ انسان فضول کاموں سے بچتا ہے۔">
+وقت کی حفاظت
+</li>
+
+<li data="قرآن انسان کو سچائی کا راستہ دکھاتا ہے۔ جھوٹ اور فریب سے نفرت پیدا ہوتی ہے۔">
+سچائی
+</li>
+
+<li data="قرآن پڑھنے سے ذہنی دباؤ کم ہوتا ہے۔ دل کو سکون اور راحت ملتی ہے۔">
+ذہنی سکون
+</li>
+
+<li data="قرآن انسان کو شکر گزار بناتا ہے۔ نعمتوں کی قدر سکھاتا ہے۔">
+شکر گزاری
+</li>
+
+<li data="قرآن دل کو زندہ رکھتا ہے۔ مردہ دلوں کو ایمان کی روشنی دیتا ہے۔">
+دل کی زندگی
+</li>
+
+<li data="قرآن پڑھنے سے نیکیوں میں رغبت بڑھتی ہے۔ برائیوں سے نفرت پیدا ہوتی ہے۔">
+نیکی کی رغبت
+</li>
+
+<li data="قرآن انسان کو دعا کی طاقت سکھاتا ہے۔ اللہ سے مانگنے کا سلیقہ آتا ہے۔">
+دعا کی قبولیت
+</li>
+
+<li data="قرآن انسان کو ثابت قدم رکھتا ہے۔ مشکلات میں ایمان مضبوط رہتا ہے۔">
+ثابت قدمی
+</li>
+
+<li data="قرآن انسان کو عدل اور انصاف سکھاتا ہے۔ ظلم سے نفرت پیدا ہوتی ہے۔">
+عدل و انصاف
+</li>
+
+<li data="قرآن انسان کو نرم دل بناتا ہے۔ دل میں رحم اور محبت پیدا ہوتی ہے۔">
+رحم دلی
+</li>
+
+<li data="قرآن انسان کو نفس پر قابو سکھاتا ہے۔ خواہشات محدود ہو جاتی ہیں۔">
+نفس کی اصلاح
+</li>
+
+<li data="قرآن پڑھنے سے دعا میں تاثیر آتی ہے۔ اللہ کی مدد قریب ہو جاتی ہے۔">
+اللہ کی مدد
+</li>
+
+<li data="قرآن انسان کو اچھا مسلمان بناتا ہے۔ کردار اور عمل سنور جاتے ہیں۔">
+کامل مسلمان
+</li>
+
+<li data="قرآن انسان کو فتنوں سے بچاتا ہے۔ ایمان محفوظ رہتا ہے۔">
+فتنوں سے حفاظت
+</li>
+
+<li data="قرآن انسان کو صبر کی طاقت دیتا ہے۔ آزمائش آسان ہو جاتی ہے۔">
+صبر
+</li>
+
+<li data="قرآن پڑھنے سے دل میں نور پیدا ہوتا ہے۔ چہرے پر رونق آتی ہے۔">
+نورانیت
+</li>
+
+<li data="قرآن انسان کو اللہ پر توکل سکھاتا ہے۔ پریشانیاں کم ہو جاتی ہیں۔">
+توکل
+</li>
+
+<li data="قرآن انسان کو حق اور باطل میں فرق سکھاتا ہے۔ شعور بڑھتا ہے۔">
+حق کی پہچان
+</li>
+
+<li data="قرآن انسان کو خود احتسابی سکھاتا ہے۔ گناہوں پر ندامت ہوتی ہے۔">
+خود احتسابی
+</li>
+
+<li data="قرآن پڑھنے والا باوقار بن جاتا ہے۔ لوگوں کے دلوں میں عزت پیدا ہوتی ہے۔">
+عزت و وقار
+</li>
+
+<li data="قرآن دل کو حسد اور بغض سے پاک کرتا ہے۔ محبت اور اخوت بڑھتی ہے۔">
+دل کی صفائی
+</li>
+
+<li data="قرآن انسان کو دنیا کی حقیقت سمجھاتا ہے۔ آخرت کی فکر پیدا ہوتی ہے۔">
+دنیا کی حقیقت
+</li>
+
+<li data="قرآن انسان کو اچھے اعمال پر ابھارتا ہے۔ نیکی آسان ہو جاتی ہے۔">
+اعمالِ صالحہ
+</li>
+
+<li data="قرآن انسان کو علم کی طرف مائل کرتا ہے۔ سوچنے اور سمجھنے کی عادت بنتی ہے۔">
+علم کی رغبت
+</li>
+
+<li data="قرآن پڑھنے والا برے انجام سے محفوظ رہتا ہے۔ اللہ کی حفاظت شامل حال ہوتی ہے۔">
+اللہ کی حفاظت
+</li>
+
+<li data="قرآن انسان کو باادب بناتا ہے۔ گفتگو اور رویہ بہتر ہو جاتا ہے۔">
+ادب و اخلاق
+</li>
+
+<li data="قرآن دل میں یقینِ کامل پیدا کرتا ہے۔ ایمان مضبوط ہو جاتا ہے۔">
+یقینِ کامل
+</li>
+
+<li data="قرآن انسان کو آخری وقت میں آسانی دیتا ہے۔ ایمان پر خاتمہ نصیب ہوتا ہے۔">
+حسنِ خاتمہ
+</li>
+
+<li data="قرآن انسان کے لیے قیامت کے دن سفارش کرے گا۔ یہ اللہ کی عظیم نعمت ہے۔">
+شفاعتِ قرآن
+</li>
+
+<li data="قرآن دنیا اور آخرت میں کامیابی کا ذریعہ بنتا ہے۔">
+کامیابی
+</li>
+<li data="قرآن گناہوں کی معافی اور رحمت کا سبب بنتا ہے۔">
+مغفرت
+</li>
+<li data="قرآن مشکلات میں آسانی اور دل میں امید پیدا کرتا ہے۔">
+آسانی
+</li>
+</ul>
+</div>
+
+<!-- POPUP -->
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+<h3>قرآن پڑھنے کے فوائد</h3>
+<p id="popupText"></p>
+<div class="popup-buttons">
+<button class="copy-btn" id="copyBtn">📋 Copy</button>
+<button class="close-btn" id="closeBtn">✖ بند کریں</button>
+</div>
+</div>
+
+<div class="copy-msg" id="copyMsg">Copied Successfully ✅</div>
+
+<footer>&copy; 2025 HidayatWay</footer>
+
+<script>
+const body=document.body;
+const toggle=document.getElementById("modeToggle");
+
+if(localStorage.getItem("mode")==="dark"){
+    body.classList.add("dark");
+    toggle.textContent="☀ Light";
+}
+toggle.onclick=()=>{
+    body.classList.toggle("dark");
+    if(body.classList.contains("dark")){
+        toggle.textContent="☀ Light";
+        localStorage.setItem("mode","dark");
+    }else{
+        toggle.textContent="🌙 Dark";
+        localStorage.setItem("mode","light");
+    }
+};
+
+const items=document.querySelectorAll("#benefits li");
+const popup=document.getElementById("popup");
+const overlay=document.getElementById("overlay");
+const text=document.getElementById("popupText");
+const closeBtn=document.getElementById("closeBtn");
+const copyBtn=document.getElementById("copyBtn");
+const msg=document.getElementById("copyMsg");
+
+items.forEach(li=>{
+    li.onclick=()=>{
+        text.textContent=li.getAttribute("data");
+        popup.classList.add("active");
+        overlay.classList.add("active");
+    }
+});
+closeBtn.onclick=overlay.onclick=()=>{
+    popup.classList.remove("active");
+    overlay.classList.remove("active");
+};
+copyBtn.onclick=()=>{
+    navigator.clipboard.writeText(text.textContent);
+    msg.classList.add("show");
+    setTimeout(()=>msg.classList.remove("show"),1500);
+};
+</script>
+
+</body>
+</html>
